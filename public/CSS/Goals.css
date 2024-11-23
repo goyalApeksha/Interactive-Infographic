@@ -1,0 +1,250 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Background gradient combining sky blue and soft peach */
+    background: linear-gradient(to right, #6fb1fc, #ffb3ba); /* Sky blue to soft peach */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    color: #080202;
+}
+
+/* Container for Heading and Goals */
+.container p {
+    color: #ffffff; /* Light text color for dark backgrounds */
+    font-size: 1.2rem; /* Adjust font size for readability */
+    line-height: 1.6; /* Spacing between lines for better readability */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); /* Add subtle shadow for better contrast */
+    margin-top: 20px;
+    text-align: center; /* Center-align the text */
+    padding: 0 20px; /* Add padding for spacing */
+}
+
+
+.container::before {
+    content: ""; /* Necessary for pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://img.freepik.com/free-photo/cup-man-achievement-success-honor_1150-1719.jpg?t=st=1731768114~exp=1731771714~hmac=246a554ae3e628fb1ecf81662fd4336dd33f1e200eba3e3ce6c2f58150a4f34b&w=996") no-repeat center center;
+    background-size: cover; /* Ensures the background image covers the entire container */
+    opacity: 0.1; /* Adjusts background image opacity */
+    z-index: -1; /* Places the background behind the container content */
+    pointer-events: none; /* Ensures the pseudo-element doesn't interfere with user interactions */
+}
+
+.container p {
+    font-weight: 1000;
+    font-size: 30px;
+    margin-top: 10%;
+    color: #645485;
+    animation: moveHeading 3s ease-in-out infinite alternate, colorChange 4s linear infinite;
+}
+
+
+.animated-heading {
+    font-size: 4rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    animation: moveHeading 3s ease-in-out infinite alternate, colorChange 4s linear infinite;
+
+    /* Centering with Flexbox */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 200px; /* Ensures it takes full viewport height */
+    margin: 0; /* Removes default margin */
+    text-align: center; /* Ensures text alignment is centered */
+}
+
+
+
+/* Animation for Heading Movement */
+@keyframes moveHeading {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animation for Heading Color Change */
+@keyframes colorChange {
+    0% {
+        color: #fff;
+    }
+    50% {
+        color: #ff6600; /* Color at the middle of the animation */
+    }
+    100% {
+        color: #fff;
+    }
+}
+
+
+/* Timeline Wrapper */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Consistent gap between cards */
+    flex-grow: 1;
+    width: 100%; /* Full width for proper centering */
+    max-width: 900px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Goal Card Styling */
+.goal-card {
+    width: 280px;
+    height: 350px;
+    perspective: 1000px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Inner Card */
+.inner-card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.goal-card:hover .inner-card {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+/* Front Side */
+.front {
+    background: linear-gradient(135deg, #96fbc4, #f9f586); /* Mint green to soft yellow for short-term */
+    color: rgb(61 61 41 / 67%);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.front h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.front p {
+    font-size: 1.5rem;
+}
+
+/* Back Side */
+.back {
+    background: linear-gradient(135deg, #fbc2eb, #a18cd1); /* Light pink to lavender for short-term back */
+    transform: rotateY(180deg);
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.back h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.back p {
+    font-size: 1.5rem;
+}
+
+/* Long-term Goal Colors */
+.long-term .front {
+    background: linear-gradient(135deg, #89f7fe, #66a6ff); /* Turquoise to sky blue */
+}
+
+.long-term .back {
+    background: linear-gradient(135deg, #ffd3a5, #fd6585); /* Peach to vibrant pink */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .timeline {
+        grid-template-columns: 1fr; /* One card per row on smaller screens */
+    }
+    .goal-card {
+        height: 300px;
+    }
+    .animated-heading {
+        font-size: 2.5rem;
+    }
+}
+
+/* Footer Styles */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Previous and Next Buttons */
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffffff;
+}
+
+/* Left and Right Alignment */
+.previous-btn {
+    margin-left: 10px;
+}
+
+.next-btn {
+    margin-right: 10px;
+}

@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #00ffcc;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  background-color: #dce4ef;
+  color: #363a7c;
+  padding: 40px 20px;
+}
+
+.header h1 {
+  font-size: 3rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Infographic Section */
+.infographic {
+  padding: 50px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.infographic h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.step {
+  width: 22%;
+  background-color: #e9f1fc;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+}
+
+.icon-container {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.icon-container img {
+  width: 100%;
+  height: auto;
+}
+
+.step h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 1rem;
+}
+
+/* Quiz Section */
+.quiz-section {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 40px;
+}
+
+.quiz-btn {
+  background-color: #4A90E2;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.quiz-btn:hover {
+  background-color: #3a597e;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Full Background Image */
+.container {
+  max-width: 100%;
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+  background: lawngreen url('https://img.freepik.com/free-vector/human-evolution-from-monkey-cyborg_74855-5268.jpg?w=1380&t=st=1729226445~exp=1729227045~hmac=e23150839acfe7a409df64e154a3b49f11f389dd78f6ba7da2b6f1f6d6d1a9b7') no-repeat center center/cover;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

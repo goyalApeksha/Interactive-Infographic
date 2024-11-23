@@ -1,0 +1,46 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOGIN/SIGNUP</title>
+    <link rel="stylesheet" href="/Interactive Infographic/my-login-backend/public/CSS/login.css" />
+</head>
+<body>
+
+
+    <main>
+        
+    <div class="signup">
+        <span>Not a member?</span>
+        <button type="button" class="sign-up-btn">Sign Up</button>
+    </div>
+    <div class="login">
+        <span>Already have an account?</span>
+        <button type="button">Login</button>
+    </div>
+
+    <div class="back-layer">
+        <form action="http://localhost:3000/login" method="POST" class="login-form active">
+            <h2 class="login-label">Login</h2>
+            <input type="email" id="lemail" name="email" placeholder="Email" required />
+            <input type="password" id="lpassword" name="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+        </form>
+        
+        <form action="http://localhost:3000/signup" method="POST" class="signup-form">
+            <h2>Sign Up</h2>
+            <input type="text" id="f-name" name="firstName" placeholder="First Name" required />
+            <input type="text" id="l-name" name="lastName" placeholder="Last Name" required />
+            <input type="email" id="semail" name="email" placeholder="Email" required />
+            <input type="password" id="spassword" name="password" placeholder="Password" required />
+            <button type="submit">Sign Up</button>
+        </form>
+        
+    </div>
+    </main>
+    
+    <script src="/Interactive Infographic/my-login-backend/public/SCRIPTING/login.js"></script>
+</body>
+</html>

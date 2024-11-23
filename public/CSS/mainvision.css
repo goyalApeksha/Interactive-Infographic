@@ -1,0 +1,193 @@
+/* General Aesthetic Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Heading */
+.vision-heading {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
+    animation: fadeInDown 1s ease;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Vision Statement */
+.vision-statement {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #fff;
+    margin: 20px 0;
+    width: 80%;
+    max-width: 800px;
+    line-height: 1.5;
+    animation: fadeInUp 1.5s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for Cards */
+.vision-container {
+    margin-top: 40px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1000px;
+}
+
+/* Card Styles */
+.vision-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 0.7s ease-out;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* Card Hover Effect */
+.vision-card:hover {
+    transform: translateX(0) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Content within the card */
+.card-content {
+    flex-basis: 70%;
+}
+
+.card-content h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #333;
+    position: relative;
+}
+
+.card-content h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 40px;
+    height: 3px;
+    background-color: #ff6f61;
+    animation: lineGrow 1s ease forwards;
+}
+
+.card-content p {
+    margin: 10px 0 0 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Icon Styles */
+.card-icon {
+    flex-basis: 20%;
+    font-size: 5rem; /* Increased size for more aesthetic feel */
+    text-align: center;
+    color: #ff6f61;
+    animation: bounceIcon 2s infinite;
+}
+
+/* Alternate Alignment */
+.vision-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lineGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 40px;
+    }
+}
+
+@keyframes bounceIcon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Scroll-triggered slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Style for the Vision Footer */
+.vision-footer {
+    display: flex;
+    justify-content: space-between; /* This positions the buttons in opposite corners */
+    padding: 20px;
+    /* background-color: #f5f5f5; */
+    margin-top: 20px;
+    position: fixed; /* Make the footer always visible at the bottom */
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.nav-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,132 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:#333; /* Changed to black for X branding */
+    margin: 0;
+    overflow: hidden; /* To prevent extra scrolling */
+    color: #fff; /* Text color changed to white */
+}
+
+/* Navigation Bar Styling */
+nav {
+    position: fixed; /* Fixes navigation to the top */
+    top: 0; /* Sets it at the very top */
+    left: 0; /* Aligns it to the left edge */
+    width: 100%; /* Spans full width */
+    background-color: #3c3a3a; /* Background color for the bar */
+    padding: 10px 0; /* Padding for height */
+    z-index: 1000; /* Ensures it appears above other elements */
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #00ffcc;
+}
+body {
+    margin: 0; /* Removes default margin to avoid spacing issues */
+    padding-top: 50px; /* Adds padding so content doesn't overlap nav */
+}
+
+
+
+/* Contact Card Styling */
+.contact-card {
+    text-align: center;
+    background-color: #0f1111d9; /* Darker background for the card */
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+    padding: 60px;
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 1.2s ease-in-out;
+    color: #fff;
+}
+
+/* Header Animation */
+.contact-card h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #fff; /* Text color white */
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Profile Picture Animation */
+.profile-pic img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #333; /* Border darkened to match X branding */
+    margin-bottom: 30px;
+    animation: scaleUp 1.2s ease-in-out forwards;
+}
+
+/* Social Icons Styling and Animation */
+.social-icons {
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+.social-icons a {
+    margin: 0 20px;
+    font-size: 40px;
+    color: #fff; /* Icons white by default */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #1DA1F2; /* Hover effect in X blue for Twitter */
+    transform: translateY(-8px); /* Increased hover animation */
+}
+
+/* Animations */
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide Up Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Profile Picture Scale-up Animation */
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
